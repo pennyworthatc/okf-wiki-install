@@ -1,2 +1,2 @@
-# Llm-wiki-install
+# Okf-wiki-install
 Instructions to install/restore a okf compatible llm-wiki
