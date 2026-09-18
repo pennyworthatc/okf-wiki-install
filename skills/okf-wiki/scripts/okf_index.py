@@ -91,11 +91,12 @@ def main() -> int:
         default=None,
         help="Vault directory (defaults to OKF_WIKI_VAULT)",
     )
+    ap.add_argument("--vault", dest="vault_opt", default=None, help="Vault directory (defaults to OKF_WIKI_VAULT)")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    if args.vault_dir:
-        root = Path(args.vault_dir).expanduser().resolve()
+    if args.vault_dir or args.vault_opt:
+        root = Path(args.vault_opt or args.vault_dir).expanduser().resolve()
     else:
         from okf_common import vault_root
         root = vault_root()
