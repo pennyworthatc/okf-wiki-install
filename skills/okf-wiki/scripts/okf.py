@@ -9,6 +9,7 @@ from pathlib import Path
 SCRIPTS_DIR = Path(__file__).parent
 
 SUBCOMMAND_MAP: dict[str, str] = {
+    "bootstrap": "okf_bootstrap.py",
     "init": "okf_init.py",
     "ingest": "okf_ingest.py",
     "update": "okf_update.py",
@@ -24,6 +25,7 @@ HELP = """OKF Wiki — persistent Markdown knowledge base
 Usage: okf <subcommand> [flags]
 
 Subcommands:
+  bootstrap [vault]  Bootstrap a local OKF Wiki installation
   init <vault>       Initialize a wiki vault
   ingest <source>    Ingest an immutable raw source
   update <page>      Record an intentional page update
